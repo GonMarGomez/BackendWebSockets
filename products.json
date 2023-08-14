@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "status": true,
+        "title": "Call of duty",
+        "description": "Call of duty es un juego de disparos en primera persona",
+        "price": 2400,
+        "thumbnail": [
+            "humbnail"
+        ],
+        "code": "code111",
+        "stock": 3,
+        "category": "Disparos en primera persona"
+    },
+    {
+        "id": 2,
+        "status": true,
+        "title": "Cuphead",
+        "description": "Cuphead es un juego multijugador en 2D",
+        "price": 3400,
+        "thumbnail": [
+            "humbnail"
+        ],
+        "code": "code1112",
+        "stock": 3,
+        "category": "Miltiplayer"
+    }
+]
