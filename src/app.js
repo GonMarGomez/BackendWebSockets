@@ -39,9 +39,8 @@ io.on('connection', async socket=>{
     io.emit('loadproducts', products);
 
     socket.on('sendProduct', async data=>{
-        
         const product = await productManager.addProduct(data);
-        console.log(data);
+        console.log(product);
         io.emit('showProduct', product);
     })
 

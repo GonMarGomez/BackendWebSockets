@@ -33,9 +33,8 @@ async getProducts() {
           try {
             const data = await fs.promises.readFile(this.path, 'utf8');
             const products = JSON.parse(data);
-            console.log(products);
-    
             return products;
+    
           } catch (err) {
             console.error('Error al leer el archivo de productos:', err);
             return [];

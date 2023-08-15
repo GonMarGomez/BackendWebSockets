@@ -15,7 +15,7 @@ socket.on('loadproducts', async (products) => {
                 <p>${product.description}</p>
                 <p>Precio: ${product.price}</p>
                 <p>Stock: ${product.stock}</p>
-                <p>Stock: ${product.thumbnail}</p>
+                <p>Thumbnail: ${product.thumbnail}</p>
             </div>
         `;
 
@@ -24,14 +24,14 @@ socket.on('loadproducts', async (products) => {
 });
 
 function sendEvent(){
-    const productData = {
+    const productData ={ 
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
         price: document.querySelector('#price').value,
         code: document.querySelector('#code').value,
         stock: document.querySelector('#stock').value,
         category: document.querySelector('#category').value,
-        thumbnail: document.querySelector('#thumbnail')
+        thumbnail: document.querySelector('#thumbnail').value
     };
 
     socket.emit('sendProduct', productData);
@@ -42,7 +42,7 @@ function sendEvent(){
 
 socket.on('showProduct', (product) => {
     const container = document.querySelector('.product-list');
-
+    console.log(product);
     const productCard = `
         <div class="product-card">
             <h2>${product.title}</h2>
@@ -50,6 +50,7 @@ socket.on('showProduct', (product) => {
             <p>${product.description}</p>
             <p>Precio: ${product.price}</p>
             <p>Stock: ${product.stock}</p>
+            <p>Thumbnail:${product.thumbnail}</p>
         </div>
     `;
 
