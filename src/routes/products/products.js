@@ -16,7 +16,6 @@ router.post("/", async (req, res) => {
     try {
         await productMg.addProduct(req.body);
         res.status(201).send("Producto agregado correctamente");
-        console.log('soy product.js');
     } catch (error) {
         console.error(error);
         res.status(500).send(error);

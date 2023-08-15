@@ -40,8 +40,16 @@ io.on('connection', async socket=>{
 
     socket.on('sendProduct', async data=>{
         const product = await productManager.addProduct(data);
-        console.log(product);
-        io.emit('showProduct', product);
+        const productos = await productManager.getProducts()
+        let idNuevo = productos.find((p) =>p.code === data.code)
+        let prodNuevo ={
+            id: idNuevo.id,
+            title: data.title,
+            description: data.description,
+            price: data.price,
+            thumbnail: data.thumbnail,
+        }
+        io.emit('showProduct', prodNuevo);
     })
 
     socket.on('deleteProduct', async data => {

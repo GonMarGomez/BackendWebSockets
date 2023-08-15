@@ -42,12 +42,12 @@ function sendEvent(){
 
 socket.on('showProduct', (product) => {
     const container = document.querySelector('.product-list');
-    console.log(product);
+
     const productCard = `
         <div class="product-card">
             <h2>${product.title}</h2>
             <p>Id:${product.id}</p>
-            <p>${product.description}</p>
+            <p>Description:${product.description}</p>
             <p>Precio: ${product.price}</p>
             <p>Stock: ${product.stock}</p>
             <p>Thumbnail:${product.thumbnail}</p>

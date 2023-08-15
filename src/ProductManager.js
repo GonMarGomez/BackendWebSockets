@@ -21,7 +21,6 @@ export default class ProductManager {
       category: (() => { if (!prod.category) { throw "Error: El procuto no tiene category" } return prod.category })(),
     }
     this.products.push(productoNuevo)
-    console.log(this.products);
  
      await fs.promises.writeFile(this.path, JSON.stringify(this.products, null))}
 
